@@ -29,6 +29,15 @@ const config: Configuration = {
           },
         },
       },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ["@svgr/webpack"],
+      },
+      {
+        test: /\.(woff2|woff|eot|ttf|otf)$/,
+        use: ["file-loader"],
+      },
     ],
   },
   resolve: {
