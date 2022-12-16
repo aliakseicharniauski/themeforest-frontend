@@ -76,7 +76,7 @@ export default function MobileNav({ mobileNav }: Props) {
 
   return (
     <>
-      <MobileNavStyled mobileNav>
+      <MobileNavStyled mobileNav={mobileNav}>
         {navigationLinks.map((link) =>
           link.links ? (
             <React.Fragment key={link.name}>

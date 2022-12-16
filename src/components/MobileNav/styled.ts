@@ -1,11 +1,12 @@
-import { List, ListItemButton, Stack, Collapse } from "@mui/material";
+import { ListItemButton, Stack, Collapse } from "@mui/material";
 import { styled as styledMui } from "@mui/material/styles";
+import styled from "styled-components";
 
 interface Props {
   mobileNav: boolean;
 }
 
-export const MobileNavStyled = styledMui(List)<Props>`
+export const MobileNavStyled = styled.nav<Props>`
   display: none;
 
   @media (max-width: 800px) {
