@@ -1,107 +1,116 @@
-import React, { useState } from "react";
-import { Button, Box, Typography } from "@mui/material";
-import { styled as styledMui } from "@mui/material/styles";
-import styled from "styled-components";
-import Logo from "../../assets/logo_blue.svg";
+import React, { useEffect, useState } from "react";
+
 import IconMenu from "../../assets/icon_menu.svg";
 import IconMenuClose from "../../assets/icon_menu_close.svg";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
-import { StyledHeader } from "./styled";
-import MobileNav from "../MobileNav";
-import Nav from "../Nav";
+import IconPlayVideo from "../../assets/icon_playvideo.svg";
+import { Typography } from "@mui/material";
+import MenuMobile from "../MenuMobile";
+import {
+  DisableBodyScroll,
+  HamburgerButton,
+  Navbar,
+  WatchVideoButton,
+} from "./styled";
+import FollowUs from "../FollowUs";
 
+// TODO: separate to routes
 const navigationLinks = [
   { name: "Home", href: "" },
   { name: "Solutions", href: "" },
-  { name: "Pages", href: "" },
+  {
+    name: "Pages",
+    href: "",
+    links: [
+      { name: "Page1", href: "" },
+      { name: "Page2", href: "" },
+    ],
+  },
   { name: "Elements", href: "" },
-  { name: "Blog", href: "" },
-  { name: "Contacts", href: "" },
+  {
+    name: "Blog",
+    href: "",
+    links: [
+      { name: "Page3", href: "" },
+      { name: "Page4", href: "" },
+    ],
+  },
+  {
+    name: "Contacts",
+    href: "",
+    links: [
+      { name: "Page3", href: "" },
+      { name: "Page4", href: "" },
+      { name: "Page5", href: "" },
+      { name: "Page6", href: "" },
+      { name: "Page7", href: "" },
+      { name: "Page8", href: "" },
+      { name: "Page9", href: "" },
+      { name: "Page10", href: "" },
+      { name: "Page11", href: "" },
+    ],
+  },
 ];
 
-const WatchVideoBtn = styledMui(Button)`
-  text-transform: none;
-  color: #FFFFFF;
-  width: 168px;
-  height: 44px;
+export default function Header() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
-  @media (max-width: 800px) {
-    display: none;
-  }
-`;
+  const [windowDimension, setWindowDimension] = useState<number>(1920);
 
-const BoxStyled = styledMui(Box)`
-  height: 126px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // border-bottom: 1px solid gray;
-  margin: 0 16px;
+  useEffect(() => {
+    setWindowDimension(window.innerWidth);
+  }, []);
 
-  @media (max-width: 800px) {
-    height: 70px;
-  }
-`;
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimension(window.innerWidth);
+    }
 
-const LogoContainerStyled = styledMui(Box)`
-  display: flex;
-  align-items: center;
-  z-index: 11;
-  // gap: 10px;
-`;
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-const MobileBtn = styledMui(Box)`
-  display: none;
-
-  @media (max-width: 800px) {
-    display: block;
-    position: absolute;
-    right: 18px;
-    top: 28px;
-    cursor: pointer;
-    z-index: 10;
-  }
-`;
-
-const Container = styled.div`
-  max-width: 1110px;
-  margin: 0 auto;
-  padding: 0 0px;
-`;
-
-const Header = () => {
-  const [mobileNav, setMobileNav] = useState(false);
+  const isMobile = windowDimension <= 800;
 
   return (
-    <StyledHeader>
-      <Container>
-        <BoxStyled>
-          <LogoContainerStyled>
-            <Logo width={141} height={46} />
-          </LogoContainerStyled>
+    <Navbar.Wrapper>
+      <Navbar.InnerWrapper>
+        <Navbar.Logo />
 
-          <Nav navigationLinks={navigationLinks} />
+        {isMobile ? (
+          <>
+            {isMenuOpen && <DisableBodyScroll />}
 
-          <WatchVideoBtn
-            variant="contained"
-            startIcon={<PlayCircleOutlineIcon />}
-          >
-            <Typography variant="h7SemiBold">Watch the demo</Typography>
-          </WatchVideoBtn>
-
-          <MobileNav mobileNav={mobileNav} />
-
-          <MobileBtn onClick={() => setMobileNav(!mobileNav)}>
-            {mobileNav ? (
-              <IconMenuClose width={16.1} height={16.1} />
-            ) : (
-              <IconMenu width={20} height={14} />
+            <Navbar.MobileItems isMenuOpen={isMenuOpen}>
+              <MenuMobile navigationLinks={navigationLinks} />
+            </Navbar.MobileItems>
+            {isMenuOpen && (
+              <Navbar.FollowUs>
+                <Typography variant="h6Bold">Follow us</Typography>
+                <FollowUs />
+              </Navbar.FollowUs>
             )}
-          </MobileBtn>
-        </BoxStyled>
-      </Container>
-    </StyledHeader>
-  );
-};
+            <HamburgerButton.Wrapper onClick={() => setMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? (
+                <IconMenuClose width={16.1} height={16.1} />
+              ) : (
+                <IconMenu width={20} height={14} />
+              )}
+            </HamburgerButton.Wrapper>
+          </>
+        ) : (
+          <>
+            <Navbar.Items>
+              {navigationLinks.map((link) => (
+                <Navbar.Item key={link.name}>{link.name}</Navbar.Item>
+              ))}
+            </Navbar.Items>
 
-export default Header;
+            <WatchVideoButton variant="contained" startIcon={<IconPlayVideo />}>
+              <Typography variant="h7SemiBold">Watch the demo</Typography>
+            </WatchVideoButton>
+          </>
+        )}
+      </Navbar.InnerWrapper>
+    </Navbar.Wrapper>
+  );
+}

@@ -2,18 +2,19 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Home } from "./pages/Home/Home";
 import { ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
 
 import { GlobalStyles } from "./styles/globalStyles";
 import { theme } from "./styles/theme";
-import { CssBaseline } from "@mui/material";
 import Header from "./components/Header";
 
+// TODO: wrap ErrorBoundary
 const App = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
     <GlobalStyles />
     <Header />
-    <Home />
+    <Home /> {/* TODO: add routes, private routes */}
   </ThemeProvider>
 );
 
