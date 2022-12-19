@@ -65,7 +65,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Manrope", "Open Sans"].join(","),
+    fontFamily: ["Manrope", "Open Sans"].join(", "),
     h1ExtraBold: {
       fontSize: "46px",
       fontWeight: 800,

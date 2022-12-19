@@ -1,39 +1,41 @@
 import React from "react";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
-      <div>content content content</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
+      <div>home home home</div>
     </div>
   );
-}
+};
+
+export default Home;

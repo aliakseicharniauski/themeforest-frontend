@@ -14,28 +14,28 @@ import {
 
 // TODO: separate to routes
 const navigationLinks = [
-  { name: "Home", href: "" },
-  { name: "Solutions", href: "" },
+  { name: "Home", href: "/" },
+  { name: "Solutions", href: "/solutions" },
   {
     name: "Pages",
-    href: "",
+    href: "/pages",
     links: [
-      { name: "Page1", href: "" },
-      { name: "Page2", href: "" },
+      { name: "Services", href: "/services" },
+      { name: "Page2", href: "/page2" },
     ],
   },
-  { name: "Elements", href: "" },
+  { name: "Elements", href: "/elements" },
   {
     name: "Blog",
-    href: "",
+    href: "/blog",
     links: [
-      { name: "Page3", href: "" },
-      { name: "Page4", href: "" },
+      { name: "Page3", href: "/page3" },
+      { name: "Page4", href: "/page4" },
     ],
   },
   {
     name: "Contacts",
-    href: "",
+    href: "/contacts",
     links: [
       { name: "Page3", href: "" },
       { name: "Page4", href: "" },
@@ -50,7 +50,7 @@ const navigationLinks = [
   },
 ];
 
-export default function Header() {
+const Header: React.FC = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const [windowDimension, setWindowDimension] = useState<number>(1920);
@@ -100,7 +100,9 @@ export default function Header() {
           <>
             <Navbar.Items>
               {navigationLinks.map((link) => (
-                <Navbar.Item key={link.name}>{link.name}</Navbar.Item>
+                <Navbar.Item to={link.href} key={link.name}>
+                  <Typography variant="h8SemiBold">{link.name}</Typography>
+                </Navbar.Item>
               ))}
             </Navbar.Items>
 
@@ -112,4 +114,6 @@ export default function Header() {
       </Navbar.InnerWrapper>
     </Navbar.Wrapper>
   );
-}
+};
+
+export default Header;

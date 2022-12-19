@@ -7,6 +7,7 @@ import IconFollowUs5 from "@assets/icon_followus_5.svg";
 import IconFollowUs6 from "@assets/icon_followus_6.svg";
 import { Social } from "./styled";
 
+// TODO: separate to constants/utils
 const links = [
   { icon: <IconFollowUs1 />, href: "https://react-svgr.com/" },
   { icon: <IconFollowUs2 />, href: "https://react-svgr.com/docs/webpack/" },
@@ -16,7 +17,7 @@ const links = [
   { icon: <IconFollowUs6 />, href: "https://react-svgr.com/docs/rollup/" },
 ];
 
-export default function FollowUs() {
+const FollowUs: React.FC = () => {
   return (
     <Social.Wrapper>
       {links.map((link) => (
@@ -31,4 +32,6 @@ export default function FollowUs() {
       ))}
     </Social.Wrapper>
   );
-}
+};
+
+export default FollowUs;

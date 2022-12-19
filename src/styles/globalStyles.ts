@@ -12,4 +12,9 @@ export const GlobalStyles = createGlobalStyle`
   html {
     box-sizing: border-box;
   }
+
+  a {
+    color: inherit;
+    text-decoration: inherit; /* no underline */
+  }
 `;

@@ -1,20 +1,46 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
 
 import { GlobalStyles } from "@styles/globalStyles";
 import { theme } from "@styles/theme";
 import Home from "@pages/Home";
-import Header from "@сomponents/Header";
+import Layout from "@сomponents/Layout";
+import Services from "@pages/Services";
+import Solutions from "@pages/Solutions";
+import NotFound from "@pages/NotFound";
+import ProtectedRoute from "@сomponents/ProtectedRoute";
+
+// TODO: add authentication/authorization
+const user = null;
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="services" element={<Services />} />
+      {/* TODO: add authentication/authorization */}
+      <Route element={<ProtectedRoute isAllowed={!!user} />}>
+        <Route path="solutions" element={<Solutions />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Route>
+  )
+);
 
 // TODO: wrap ErrorBoundary
 const App = () => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
     <GlobalStyles />
-    <Header />
-    <Home /> {/* TODO: add routes, private routes */}
+    <RouterProvider router={router} />
   </ThemeProvider>
 );
 

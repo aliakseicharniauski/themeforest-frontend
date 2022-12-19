@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { Button } from "@mui/material";
 import { styled as styledMui } from "@mui/material/styles";
@@ -64,12 +65,18 @@ export const Navbar = {
     display: flex;
     list-style: none;
   `,
-  Item: styled.li`
+  Item: styled(NavLink)`
     padding: 0 1rem;
     cursor: pointer;
+    color: #9497a1; /* TODO: add theme */
 
     @media only screen and (max-width: 800px) {
       padding: 1rem 0;
+    }
+
+    &.active {
+      color: #292d33; /* TODO: add theme */
+      font-weight: 600;
     }
   `,
 };
