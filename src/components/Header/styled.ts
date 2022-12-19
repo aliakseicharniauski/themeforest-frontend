@@ -1,7 +1,7 @@
-import { Button } from "@mui/material";
 import styled, { createGlobalStyle } from "styled-components";
+import { Button } from "@mui/material";
 import { styled as styledMui } from "@mui/material/styles";
-import Logo from "../../assets/logo_blue.svg";
+import Logo from "@assets/logo_blue.svg";
 
 export const Navbar = {
   MobileItems: styled.div`

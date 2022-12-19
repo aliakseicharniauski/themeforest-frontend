@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-
-import IconMenu from "../../assets/icon_menu.svg";
-import IconMenuClose from "../../assets/icon_menu_close.svg";
-import IconPlayVideo from "../../assets/icon_playvideo.svg";
 import { Typography } from "@mui/material";
-import MenuMobile from "../MenuMobile";
+import MenuMobile from "@сomponents/MenuMobile";
+import FollowUs from "@сomponents/FollowUs";
+import IconMenu from "@assets/icon_menu.svg";
+import IconMenuClose from "@assets/icon_menu_close.svg";
+import IconPlayVideo from "@assets/icon_playvideo.svg";
 import {
   DisableBodyScroll,
   HamburgerButton,
   Navbar,
   WatchVideoButton,
 } from "./styled";
-import FollowUs from "../FollowUs";
 
 // TODO: separate to routes
 const navigationLinks = [
@@ -69,7 +68,7 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const isMobile = windowDimension <= 800;
+  const isMobile = windowDimension <= 800; // TODO: set constants
 
   return (
     <Navbar.Wrapper>

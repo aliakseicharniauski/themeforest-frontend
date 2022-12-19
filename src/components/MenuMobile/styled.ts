@@ -1,6 +1,6 @@
+import styled from "styled-components";
 import { ListItemButton, Collapse, ListItemIcon } from "@mui/material";
 import { styled as styledMui } from "@mui/material/styles";
-import styled from "styled-components";
 
 export const Menu = {
   Wrapper: styled.div``,

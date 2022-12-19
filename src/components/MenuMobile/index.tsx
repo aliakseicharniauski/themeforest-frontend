@@ -4,7 +4,7 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { Menu, SubMenu } from "./styled";
 
-import IconListItemArrow from "../../assets/icon_listitem_arrow.svg";
+import IconListItemArrow from "@assets/icon_listitem_arrow.svg";
 
 // TODO: replace to routes, separate types
 interface NavigationLink {
@@ -47,7 +47,7 @@ export default function MenuMobile({ navigationLinks }: MenuMobileProps) {
                   {link.links.map((nestedLink) => (
                     <SubMenu.Button key={nestedLink.name}>
                       <ListItemText
-                        sx={{ flex: "none" }}
+                        // sx={{ flex: "none" }}
                         primary={
                           <Typography variant="h7SemiBold">
                             {nestedLink.name}

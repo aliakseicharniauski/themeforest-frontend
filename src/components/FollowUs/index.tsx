@@ -1,11 +1,11 @@
 import * as React from "react";
+import IconFollowUs1 from "@assets/icon_followus_1.svg";
+import IconFollowUs2 from "@assets/icon_followus_2.svg";
+import IconFollowUs3 from "@assets/icon_followus_3.svg";
+import IconFollowUs4 from "@assets/icon_followus_4.svg";
+import IconFollowUs5 from "@assets/icon_followus_5.svg";
+import IconFollowUs6 from "@assets/icon_followus_6.svg";
 import { Social } from "./styled";
-import IconFollowUs1 from "../../assets/icon_followus_1.svg";
-import IconFollowUs2 from "../../assets/icon_followus_2.svg";
-import IconFollowUs3 from "../../assets/icon_followus_3.svg";
-import IconFollowUs4 from "../../assets/icon_followus_4.svg";
-import IconFollowUs5 from "../../assets/icon_followus_5.svg";
-import IconFollowUs6 from "../../assets/icon_followus_6.svg";
 
 const links = [
   { icon: <IconFollowUs1 />, href: "https://react-svgr.com/" },

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Home = () => {
+export default function Home() {
   return (
     <div>
       <div>content content content</div>
@@ -36,4 +36,4 @@ export const Home = () => {
       <div>content content content</div>
     </div>
   );
-};
+}
