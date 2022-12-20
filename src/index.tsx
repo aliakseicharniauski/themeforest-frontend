@@ -1,5 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -8,15 +9,16 @@ import {
 } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import { CssBaseline } from "@mui/material";
-
-import { GlobalStyles } from "@styles/globalStyles";
-import { theme } from "@styles/theme";
+import { store } from "@store/store";
+import ProtectedRoute from "@сomponents/ProtectedRoute";
 import Home from "@pages/Home";
 import Layout from "@сomponents/Layout";
 import Services from "@pages/Services";
 import Solutions from "@pages/Solutions";
 import NotFound from "@pages/NotFound";
-import ProtectedRoute from "@сomponents/ProtectedRoute";
+import SignIn from "@pages/SignIn";
+import { GlobalStyles } from "@styles/globalStyles";
+import { theme } from "@styles/theme";
 
 // TODO: add authentication/authorization
 const user = null;
@@ -30,6 +32,7 @@ const router = createBrowserRouter(
       <Route element={<ProtectedRoute isAllowed={!!user} />}>
         <Route path="solutions" element={<Solutions />} />
       </Route>
+      <Route path="signin" element={<SignIn />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
@@ -37,11 +40,13 @@ const router = createBrowserRouter(
 
 // TODO: wrap ErrorBoundary
 const App = () => (
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <GlobalStyles />
-    <RouterProvider router={router} />
-  </ThemeProvider>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <GlobalStyles />
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </Provider>
 );
 
 const container = document.getElementById("root");
