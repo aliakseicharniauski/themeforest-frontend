@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react'
+import React, { Component } from 'react'
 import { Props, State } from './types'
 
 export default class ErrorBoundary extends Component<Props, State> {
@@ -11,6 +11,7 @@ export default class ErrorBoundary extends Component<Props, State> {
         return { hasError: true }
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     componentDidCatch(error: any, errorInfo: any) {
         console.log(error, errorInfo)
         // TODO: add sentry

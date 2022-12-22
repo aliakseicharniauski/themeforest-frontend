@@ -60,6 +60,7 @@
     "fork-ts-checker-webpack-plugin": "^7.2.13",
     "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "4",
     "prettier": "^2.8.1",
     "source-map-loader": "^4.0.1",
     "ts-loader": "^9.4.2",
