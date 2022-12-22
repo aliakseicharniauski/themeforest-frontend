@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
-export const GlobalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   *,
   *::before,
   *::after {
@@ -17,4 +17,6 @@ export const GlobalStyles = createGlobalStyle`
     color: inherit;
     text-decoration: inherit; /* no underline */
   }
-`;
+`
+
+export default GlobalStyles

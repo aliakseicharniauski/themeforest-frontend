@@ -1,41 +1,39 @@
-import React from "react";
+import React from 'react'
 
-const Solutions: React.FC = () => {
-  return (
-    <div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-      <div>solutions solutions solutions</div>
-    </div>
-  );
-};
+const Solutions: React.FC = () => (
+        <div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+            <div>solutions solutions solutions</div>
+        </div>
+    )
 
-export default Solutions;
+export default Solutions
