@@ -1,26 +1,28 @@
 {
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-      "@сomponents/*": ["./components/*"],
-      "@pages/*": ["./pages/*"],
-      "@assets/*": ["./assets/*"],
-      "@styles/*": ["./styles/*"],
-      "@store/*": ["./store/*"],
-      "@utils/*": ["./utils/*"]
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@сomponents/*": ["./components/*"],
+            "@pages/*": ["./pages/*"],
+            "@assets/*": ["./assets/*"],
+            "@styles/*": ["./styles/*"],
+            "@store/*": ["./store/*"],
+            "@constants/*": ["./constants/*"],
+            "@hooks/*": ["./hooks/*"],
+            "@utils/*": ["./utils/*"]
+        },
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react"
     },
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
-  },
-  "include": ["src", "custom.d.ts"]
+    "include": ["src", "custom.d.ts"]
 }

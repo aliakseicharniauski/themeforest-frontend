@@ -17,6 +17,11 @@ const GlobalStyles = createGlobalStyle`
     color: inherit;
     text-decoration: inherit; /* no underline */
   }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 export default GlobalStyles

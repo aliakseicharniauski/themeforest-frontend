@@ -1,14 +1,14 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from '@сomponents/Header'
+import MainWrapper from './styled'
 
 const Layout: React.FC = () => (
     <>
         <Header />
-        {/* TODO: separate styles */}
-        <main style={{ padding: '1rem 0' }}>
+        <MainWrapper>
             <Outlet />
-        </main>
+        </MainWrapper>
         {/* TODO: footer */}
     </>
 )

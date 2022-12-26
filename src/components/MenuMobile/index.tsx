@@ -4,18 +4,15 @@ import { List, ListItemText, Typography } from '@mui/material'
 import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
 import IconListItemArrow from '@assets/icon_listitem_arrow.svg'
-import { Menu, SubMenu } from './styled'
-
-// TODO: replace to routes, separate types
-type NavigationLink = {
-    name: string
-    href: string
-    links?: Array<{ name: string; href: string }>
-}
-
-type MenuMobileProps = {
-    navigationLinks: Array<NavigationLink>
-}
+import {
+    MenuButton,
+    MenuLine,
+    MenuWrapper,
+    SubMenuArrow,
+    SubMenuButton,
+    SubMenuCollapse,
+} from './styled'
+import { MenuMobileProps } from './types'
 
 const MenuMobile: React.FC<MenuMobileProps> = ({ navigationLinks }) => {
     const [openId, setOpenId] = React.useState<string | null>(null)
@@ -25,73 +22,68 @@ const MenuMobile: React.FC<MenuMobileProps> = ({ navigationLinks }) => {
     }
 
     return (
-        <Menu.Wrapper>
-            {navigationLinks.map((link) => (
-                <React.Fragment key={link.name}>
-                    {link.links ? (
+        <MenuWrapper>
+            {navigationLinks.map(({ label, path, links }) => (
+                <React.Fragment key={label}>
+                    {links ? (
                         <>
-                            <Menu.Button onClick={handleClick(link.name)}>
+                            <MenuButton onClick={handleClick(label)}>
                                 <ListItemText
                                     primary={
                                         <Typography variant="h6Bold">
-                                            {link.name}
+                                            {label}
                                         </Typography>
                                     }
                                 />
-                                {openId === link.name ? (
+                                {openId === label ? (
                                     <ExpandLess />
                                 ) : (
                                     <ExpandMore />
                                 )}
-                            </Menu.Button>
-                            <SubMenu.Collapse
-                                in={openId === link.name}
+                            </MenuButton>
+                            <SubMenuCollapse
+                                in={openId === label}
                                 timeout="auto"
                                 unmountOnExit
                             >
                                 <List component="div" disablePadding>
-                                    {link.links.map((nestedLink) => (
-                                        <NavLink
-                                            key={nestedLink.name}
-                                            to={nestedLink.href}
-                                        >
-                                            <SubMenu.Button
-                                                key={nestedLink.name}
-                                            >
+                                    {links.map(({ label, path }) => (
+                                        <NavLink key={label} to={path}>
+                                            <SubMenuButton key={label}>
                                                 <ListItemText
                                                     sx={{ flex: 'none' }}
                                                     primary={
                                                         <Typography variant="h7SemiBold">
-                                                            {nestedLink.name}
+                                                            {label}
                                                         </Typography>
                                                     }
                                                 />
-                                                <SubMenu.Arrow>
+                                                <SubMenuArrow>
                                                     <IconListItemArrow />
-                                                </SubMenu.Arrow>
-                                            </SubMenu.Button>
+                                                </SubMenuArrow>
+                                            </SubMenuButton>
                                         </NavLink>
                                     ))}
                                 </List>
-                            </SubMenu.Collapse>
+                            </SubMenuCollapse>
                         </>
                     ) : (
-                        <NavLink to={link.href}>
-                            <Menu.Button>
+                        <NavLink to={path}>
+                            <MenuButton>
                                 <ListItemText
                                     primary={
                                         <Typography variant="h6Bold">
-                                            {link.name}
+                                            {label}
                                         </Typography>
                                     }
                                 />
-                            </Menu.Button>
+                            </MenuButton>
                         </NavLink>
                     )}
-                    <Menu.Line />
+                    <MenuLine />
                 </React.Fragment>
             ))}
-        </Menu.Wrapper>
+        </MenuWrapper>
     )
 }
 
