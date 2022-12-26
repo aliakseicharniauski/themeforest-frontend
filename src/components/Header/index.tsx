@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Typography } from '@mui/material'
 import MenuMobile from '@сomponents/MenuMobile'
 import FollowUs from '@сomponents/FollowUs'
@@ -22,8 +22,13 @@ import {
 
 const Header: React.FC = () => {
     const [isMenuOpen, setMenuOpen] = useState(false)
+    const closeMenu = () => setMenuOpen(false)
 
     const isMobile = useMobile()
+
+    useEffect(() => {
+        closeMenu()
+    }, [isMobile])
 
     return (
         <NavbarWrapper>
@@ -33,7 +38,10 @@ const Header: React.FC = () => {
                 {isMobile ? (
                     <>
                         <NavbarMobileItems isMenuOpen={isMenuOpen}>
-                            <MenuMobile navigationLinks={navLinks} />
+                            <MenuMobile
+                                navigationLinks={navLinks}
+                                onClickItem={closeMenu}
+                            />
                         </NavbarMobileItems>
                         {isMenuOpen && (
                             <>

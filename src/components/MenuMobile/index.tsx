@@ -14,7 +14,10 @@ import {
 } from './styled'
 import { MenuMobileProps } from './types'
 
-const MenuMobile: React.FC<MenuMobileProps> = ({ navigationLinks }) => {
+const MenuMobile: React.FC<MenuMobileProps> = ({
+    navigationLinks,
+    onClickItem,
+}) => {
     const [openId, setOpenId] = React.useState<string | null>(null)
 
     const handleClick = (id: string | null) => () => {
@@ -49,7 +52,10 @@ const MenuMobile: React.FC<MenuMobileProps> = ({ navigationLinks }) => {
                                 <List component="div" disablePadding>
                                     {links.map(({ label, path }) => (
                                         <NavLink key={label} to={path}>
-                                            <SubMenuButton key={label}>
+                                            <SubMenuButton
+                                                onClick={onClickItem}
+                                                key={label}
+                                            >
                                                 <ListItemText
                                                     sx={{ flex: 'none' }}
                                                     primary={
@@ -69,7 +75,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({ navigationLinks }) => {
                         </>
                     ) : (
                         <NavLink to={path}>
-                            <MenuButton>
+                            <MenuButton onClick={onClickItem}>
                                 <ListItemText
                                     primary={
                                         <Typography variant="h6Bold">

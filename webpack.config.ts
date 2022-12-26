@@ -1,4 +1,5 @@
 import path from 'path'
+import * as dotenv from 'dotenv'
 import {
     Configuration as WebpackConfiguration,
     HotModuleReplacementPlugin,
@@ -10,6 +11,8 @@ import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+
+dotenv.config()
 
 interface Configuration extends WebpackConfiguration {
     devServer?: WebpackDevServerConfiguration

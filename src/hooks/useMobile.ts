@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
+import { defaultDimension, mobileDimension } from './constants'
 
 const useMobile = () => {
-    const [windowDimension, setWindowDimension] = useState<number>(1920) // TODO: set constants
+    const [windowDimension, setWindowDimension] =
+        useState<number>(defaultDimension)
 
     useEffect(() => {
         setWindowDimension(window.innerWidth)
@@ -16,7 +18,7 @@ const useMobile = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-    const isMobile = windowDimension <= 800 // TODO: set constants
+    const isMobile = windowDimension <= mobileDimension
 
     return isMobile
 }

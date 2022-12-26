@@ -101,7 +101,10 @@ export const router = createBrowserRouter(
             <Route index element={<Home />} />
 
             {routes.map(({ element, path, isAllowed }) => (
-                <Route element={<ProtectedRoute isAllowed={isAllowed} />}>
+                <Route
+                    key={path}
+                    element={<ProtectedRoute isAllowed={isAllowed} />}
+                >
                     <Route path={path} element={element} />
                 </Route>
             ))}
