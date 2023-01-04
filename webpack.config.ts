@@ -85,6 +85,10 @@ const config: Configuration = {
                 test: /\.(woff2|woff|eot|ttf|otf)$/,
                 use: ['file-loader'],
             },
+            {
+                test: /\.(png|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
         ],
     },
     resolve: {

@@ -1,7 +1,8 @@
 import React from 'react'
 import { createTheme } from '@mui/material/styles'
 
-import Manrope from '../assets/fonts/Manrope/Manrope-Regular.ttf'
+import Manrope from '../assets/fonts/Manrope/Manrope-VariableFont_wght.ttf'
+import OpenSans from '../assets/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf'
 
 declare module '@mui/material/styles' {
     interface TypographyVariants {
@@ -19,7 +20,6 @@ declare module '@mui/material/styles' {
         p3SemiBold: React.CSSProperties
     }
 
-    // allow configuration using `createTheme`
     interface TypographyVariantsOptions {
         h1ExtraBold?: React.CSSProperties
         h2ExtraBold?: React.CSSProperties
@@ -36,8 +36,6 @@ declare module '@mui/material/styles' {
         p3SemiBold?: React.CSSProperties
     }
 }
-
-// Update the Typography's variant prop options
 declare module '@mui/material/Typography' {
     interface TypographyPropsVariantOverrides {
         h1ExtraBold: true
@@ -56,17 +54,53 @@ declare module '@mui/material/Typography' {
     }
 }
 
+const colors = {
+    primary: '#185CFF',
+    secondary: '#9497A1',
+    tertiary: '#F0F9FF',
+    helperBlue1: '#194060',
+    helperBlue2: '#607D94',
+    helperBlue3: '#C9DCEC',
+    black: '#292D33',
+    white: '#ffffff',
+    grey: '#9497A1',
+    background: '#F1F6FA',
+    error: '#C14040',
+}
+
+export const themeValues = {
+    colors,
+}
+
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#185CFF',
+            main: colors.primary,
         },
         secondary: {
-            main: '#9497A1',
+            main: colors.secondary,
+        },
+        error: {
+            main: colors.error,
+        },
+        text: {
+            primary: colors.black,
+            secondary: colors.grey,
         },
     },
     typography: {
         fontFamily: ['Manrope', 'Open Sans'].join(', '),
+        h1: {
+            fontSize: '57px',
+            fontWeight: 800,
+            lineHeight: '66px',
+        },
+        h2: {
+            fontSize: '50px',
+            fontWeight: 800,
+            lineHeight: '112px',
+            fontFamily: 'Open Sans',
+        },
         h1ExtraBold: {
             fontSize: '46px',
             fontWeight: 800,
@@ -145,13 +179,17 @@ const theme = createTheme({
     components: {
         MuiCssBaseline: {
             styleOverrides: `
-        @font-face {
-            font-family: Manrope;
-            font-style: normal;
-            font-weight: 400;
-            src: url(${Manrope});
-        }
-      `,
+                @font-face {
+                    font-family: Manrope;
+                    font-style: normal;
+                    src: url(${Manrope});
+                }
+                @font-face {
+                    font-family: Open Sans;
+                    font-style: normal;
+                    src: url(${OpenSans});
+                }
+            `,
         },
     },
 })
