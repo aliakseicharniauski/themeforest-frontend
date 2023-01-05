@@ -56,7 +56,7 @@ declare module '@mui/material/Typography' {
 
 const colors = {
     primary: '#185CFF',
-    secondary: '#9497A1',
+    secondary: '#002B4E',
     tertiary: '#F0F9FF',
     helperBlue1: '#194060',
     helperBlue2: '#607D94',
@@ -78,7 +78,7 @@ const theme = createTheme({
             main: colors.primary,
         },
         secondary: {
-            main: colors.secondary,
+            main: colors.grey,
         },
         error: {
             main: colors.error,
@@ -170,10 +170,6 @@ const theme = createTheme({
             fontWeight: 600,
             lineHeight: '24px',
             fontFamily: 'Open Sans',
-        },
-
-        button: {
-            //   fontStyle: "italic",
         },
     },
     components: {

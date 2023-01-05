@@ -2,7 +2,7 @@
 import React from 'react'
 
 import { Button } from '@aliakseicharniauski/themeforest-library'
-import { Box, Grid, Stack, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import ImgHero from '@assets/images/hero.png'
 import Features from '@assets/images/features.png'
 import Subscribe from '@сomponents/Subscribe'
@@ -12,15 +12,15 @@ import Pricing from '@сomponents/Pricing'
 import Testimonials from '@сomponents/Testimonials'
 import Benefits from '@сomponents/Benefits'
 import CompanyOverview from '@сomponents/CompanyOverview'
+import { themeValues } from '@styles/theme'
+import { ImgHeroWrapper, Section } from './styled'
 
 const Home: React.FC = () => (
     <>
-        {/* TODO: add common wrapper */}
         {/* TODO: add theme */}
-        {/* Hero */}
-        <Box sx={{ flexGrow: 1, maxWidth: '1110px' }} pt="4.5rem" pb="5rem">
-            {/* TODO: add common wrapper */}
-            <Grid justifyContent="space-between" container spacing={2}>
+        {/* Hero Section */}
+        <Section variant="narrow" pt="4.5rem" pb="5rem">
+            <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <Typography variant="h1ExtraBold">
                         Find true power in your data with{' '}
@@ -46,14 +46,13 @@ const Home: React.FC = () => (
                     </Typography>
                 </Grid>
             </Grid>
-        </Box>
-        <Box>
-            <img style={{ width: '100%' }} alt="img hero" src={ImgHero} />
-        </Box>
+        </Section>
+        <Section>
+            <ImgHeroWrapper alt="img hero" src={ImgHero} />
+        </Section>
 
         {/* Features */}
-        <Box sx={{ flexGrow: 1, maxWidth: '1110px' }} pt="4.5rem" pb="5rem">
-            {/* TODO: add common wrapper */}
+        <Section variant="narrow" pt="4.5rem" pb="5rem">
             <Grid justifyContent="space-between" container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <Typography variant="h1">
@@ -83,106 +82,107 @@ const Home: React.FC = () => (
                     <Button label="Discover more" />
                 </Grid>
             </Grid>
-        </Box>
-        <Grid container>
-            <Grid item xs={12} md={6}>
-                <img
-                    style={{ width: '100%' }}
-                    alt="img features"
-                    src={Features}
-                />
-            </Grid>
-            <Grid
-                sx={{ background: '#F1F6FA' }}
-                pl="2.8rem"
-                item
-                xs={12}
-                md={6}
-            >
-                <Box
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="flex-start"
-                    gap="1.8rem"
-                    flexDirection="column"
-                    sx={{
-                        height: '100%',
-                        width: '100%',
-                        maxWidth: '540px',
-                    }}
+        </Section>
+        <Section>
+            <Grid container>
+                <Grid item xs={12} md={6}>
+                    <img
+                        style={{ width: '100%' }}
+                        alt="img features"
+                        src={Features}
+                    />
+                </Grid>
+                <Grid
+                    sx={{ background: themeValues.colors.background }}
+                    pl="2.8rem"
+                    item
+                    xs={12}
+                    md={6}
                 >
-                    <Typography variant="h2ExtraBold">
-                        Radically new solutions for data
-                    </Typography>
-
-                    <Typography
-                        color="secondary"
-                        variant="p1Regular"
-                        component="p"
+                    <Box
+                        display="flex"
+                        justifyContent="center"
+                        alignItems="flex-start"
+                        gap="1.8rem"
+                        flexDirection="column"
+                        height="100%"
+                        width="100%"
+                        maxWidth="34rem"
                     >
-                        Sed ut perspiciatis unde omnis iste natus error sit
-                        voluptatem accusantium doloremque laudantium, totam rem
-                        aperiam, eaque ipsa quae ab illo inventore veritatis et
-                        quasi architecto beatae vitae dicta sunt explicabo.
-                    </Typography>
+                        <Typography variant="h2ExtraBold">
+                            Radically new solutions for data
+                        </Typography>
 
-                    <Button label="Learn more" />
-                </Box>
+                        <Typography
+                            color="secondary"
+                            variant="p1Regular"
+                            component="p"
+                        >
+                            Sed ut perspiciatis unde omnis iste natus error sit
+                            voluptatem accusantium doloremque laudantium, totam
+                            rem aperiam, eaque ipsa quae ab illo inventore
+                            veritatis et quasi architecto beatae vitae dicta
+                            sunt explicabo.
+                        </Typography>
+
+                        <Button label="Learn more" />
+                    </Box>
+                </Grid>
             </Grid>
-        </Grid>
+        </Section>
 
         {/* Company overview */}
-        <Box sx={{ flexGrow: 1, maxWidth: '1110px' }} pt="7.5rem" pb="5rem">
+        <Section variant="narrow" pt="7.5rem" pb="5rem">
             <CompanyOverview />
-        </Box>
+        </Section>
 
         {/* Benefits */}
-        <Box
-            display="flex"
+        <Section
+            direction="row"
             justifyContent="center"
-            sx={{ background: '#F1F6FA', width: '100%' }}
+            background={themeValues.colors.background}
             pt="7.5rem"
             pb="7.5rem"
         >
             <Benefits />
-        </Box>
+        </Section>
 
         {/* Testimonials */}
-        <Stack pt="8.5rem" sx={{ maxWidth: '1110px' }}>
+        <Section variant="narrow" pt="8.5rem">
             <Testimonials />
-        </Stack>
+        </Section>
 
         {/* Pricing */}
-        <Stack pt="7.5rem" sx={{ maxWidth: '1110px', width: '100%' }}>
+        <Section variant="narrow" pt="7.5rem">
             <Pricing />
-        </Stack>
+        </Section>
 
         {/* Blog */}
-        <Stack pt="8.5rem" pb="7.5rem" sx={{ maxWidth: '1110px' }}>
+        <Section variant="narrow" pt="8.5rem" pb="7.5rem">
             <Blog />
-        </Stack>
+        </Section>
 
         {/* Contact us */}
-        <Box
-            display="flex"
+        <Section
+            direction="row"
             justifyContent="center"
-            sx={{ background: '#F1F6FA', width: '100%' }}
+            background={themeValues.colors.background}
             pt="6.25rem"
             pb="6.25rem"
         >
             <ContactUs />
-        </Box>
+        </Section>
 
         {/* Subscribe */}
-        <Box
-            display="flex"
+        <Section
+            direction="row"
             justifyContent="center"
-            sx={{ background: '#002B4E', width: '100%' }}
+            background={themeValues.colors.secondary}
             pt="7.5rem"
             pb="7.5rem"
         >
             <Subscribe />
-        </Box>
+        </Section>
     </>
 )
 

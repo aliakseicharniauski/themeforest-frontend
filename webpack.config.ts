@@ -105,7 +105,7 @@ const config: Configuration = {
                   static: path.join(__dirname, 'build'),
                   historyApiFallback: true,
                   port: 4000,
-                  open: ['/themeforest-frontend'],
+                  open: ['/themeforest-frontend/'],
                   hot: true,
               }
             : undefined,
