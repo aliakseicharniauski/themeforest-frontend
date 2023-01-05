@@ -109,7 +109,10 @@ export const router = createBrowserRouter(
                 </Route>
             ))}
         </Route>
-    )
+    ),
+    {
+        basename: process.env.PUBLIC_URL,
+    }
 )
 
 export default PathURL

@@ -10,6 +10,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+import DotenvPlugin from 'dotenv-webpack'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 
 dotenv.config()
@@ -34,6 +35,7 @@ const plugins: WebpackPluginInstance[] = [
     new ESLintPlugin({
         extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
+    new DotenvPlugin(),
 ]
 
 let mode: Mode = Mode.DEVELOPMENT
@@ -103,7 +105,7 @@ const config: Configuration = {
                   static: path.join(__dirname, 'build'),
                   historyApiFallback: true,
                   port: 4000,
-                  open: true,
+                  open: ['/themeforest-frontend'],
                   hot: true,
               }
             : undefined,
