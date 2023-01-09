@@ -79,7 +79,7 @@ const Home: React.FC = () => (
                         aperiam, eaque ipsa quae ab illo inventore veritatis et
                         quasi architecto beatae vitae dicta sunt explicabo.
                     </Typography>
-                    <Button label="Discover more" />
+                    <Button>Discover more</Button>
                 </Grid>
             </Grid>
         </Section>
@@ -125,7 +125,7 @@ const Home: React.FC = () => (
                             sunt explicabo.
                         </Typography>
 
-                        <Button label="Learn more" />
+                        <Button>Learn more</Button>
                     </Box>
                 </Grid>
             </Grid>

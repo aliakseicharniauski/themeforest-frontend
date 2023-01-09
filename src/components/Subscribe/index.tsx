@@ -35,7 +35,7 @@ const Subscribe = () => (
                     }}
                     placeholder="Your email"
                 />
-                <Button variant="text" label="Send" />
+                <Button variant="text">Send</Button>
             </Paper>
         </Stack>
     </Stack>

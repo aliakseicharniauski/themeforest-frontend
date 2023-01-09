@@ -67,7 +67,7 @@
         "react-dom": "^18.2.0"
     },
     "dependencies": {
-        "@aliakseicharniauski/themeforest-library": "1.0.12",
+        "@aliakseicharniauski/themeforest-library": "1.0.14",
         "@emotion/react": "^11.10.5",
         "@emotion/styled": "^11.10.5",
         "@fontsource/roboto": "^4.5.8",

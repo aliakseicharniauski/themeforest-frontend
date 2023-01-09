@@ -3,7 +3,7 @@ import { Icon } from '@aliakseicharniauski/themeforest-library'
 import ImgBlog from '@assets/images/img_blog_1.png'
 import ImgPerson from '@assets/images/img_person.png'
 
-/* TODO: replace data to redux */
+/* TODO: replace data to redux, fetch data from backend */
 export const testData = {
     testImonialsCards: [],
     blogCards: [
@@ -87,6 +87,69 @@ export const testData = {
             role: 'CEO by PixelPerfect',
             description:
                 'Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum.',
+        },
+    ],
+    priceCards: [
+        {
+            id: '1',
+            title: 'Free trial',
+            price: [
+                { price: '$20', period: 'Mo' },
+                { price: '$30', period: 'Yr' },
+            ],
+            variant: 'thin',
+            services: [
+                'For small teams – 5 users',
+                'Community support',
+                'Individual data – 20GB',
+            ],
+        },
+        {
+            id: '2',
+            title: 'Lite',
+            price: [
+                { price: '$20', period: 'Mo' },
+                { price: '$30', period: 'Yr' },
+            ],
+            variant: 'thin',
+            services: [
+                'For small teams – 5 users',
+                'Community support',
+                'Individual data – 20GB',
+            ],
+        },
+        {
+            id: '3',
+            title: 'Basic',
+            price: [
+                { price: '$20', period: 'Mo' },
+                { price: '$30', period: 'Yr' },
+            ],
+            variant: 'thin',
+            services: [
+                'For small teams – 5 users',
+                'Community support',
+                'Individual data – 20GB',
+                'Advanced permissions',
+            ],
+        },
+        {
+            id: '4',
+            title: 'For enterprises',
+            price: [
+                { price: '$20', period: 'Mo' },
+                { price: '$30', period: 'Yr' },
+            ],
+            variant: 'thin',
+            services: [
+                'Unlimited team members',
+                'Individual support',
+                'Unlimited Individual data',
+                'Advanced permissions',
+                'Data history',
+                'Audit log',
+                'All functions included',
+            ],
         },
     ],
 }

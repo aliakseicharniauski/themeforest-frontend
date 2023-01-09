@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { PriceCard } from '@aliakseicharniauski/themeforest-library'
 import { Typography, Stack } from '@mui/material'
-import PriceCard from '@сomponents/PriceCard'
+import { testData } from '@utils/testData'
+
 import React from 'react'
 
 const Pricing = () => (
@@ -11,11 +14,16 @@ const Pricing = () => (
             direction="row"
             justifyContent="space-between"
         >
-            {/* TODO: replace to frontend-lib, use data */}
-            <PriceCard />
-            <PriceCard />
-            <PriceCard />
-            <PriceCard />
+            {/* TODO: use redux data */}
+            {testData.priceCards.map(({ id, title, price, services }) => (
+                <PriceCard
+                    key={id}
+                    variant="thin"
+                    title={title}
+                    price={price as any}
+                    services={services}
+                />
+            ))}
         </Stack>
     </>
 )

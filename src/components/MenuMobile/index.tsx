@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { List, ListItemText, Typography } from '@mui/material'
 import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
-import IconListItemArrow from '@assets/icon_listitem_arrow.svg'
+import IconListItemArrow from '@assets/icons/icon_listitem_arrow.svg'
 import {
     MenuButton,
     MenuLine,
@@ -14,6 +14,7 @@ import {
 } from './styled'
 import { MenuMobileProps } from './types'
 
+/* TODO: replace to themeforest-library */
 const MenuMobile: React.FC<MenuMobileProps> = ({
     navigationLinks,
     onClickItem,

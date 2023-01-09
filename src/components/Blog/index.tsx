@@ -30,9 +30,10 @@ const Blog = () => (
                     link={
                         <Button
                             variant="text"
-                            label="Read more"
                             endIcon={<Icon.IconArrowRight />}
-                        />
+                        >
+                            Read more
+                        </Button>
                     }
                 />
             ))}

@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 import { Button } from '@mui/material'
 import { styled as styledMui } from '@mui/material/styles'
-import Logo from '@assets/logo_blue.svg'
+import Logo from '@assets/icons/logo_blue.svg'
 
 export const NavbarMobileItems = styled.div`
     position: fixed;

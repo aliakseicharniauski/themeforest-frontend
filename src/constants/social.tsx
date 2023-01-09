@@ -1,11 +1,11 @@
 import React from 'react'
 
-import IconFacebook from '@assets/icon_followus_facebook.svg'
-import IconTwitter from '@assets/icon_followus_twitter.svg'
-import IconLinkedin from '@assets/icon_followus_linkedin.svg'
-import IconYoutube from '@assets/icon_followus_youtube.svg'
-import IconPinterest from '@assets/icon_followus_pinterest.svg'
-import IconBehance from '@assets/icon_followus_behance.svg'
+import IconFacebook from '@assets/icons/icon_followus_facebook.svg'
+import IconTwitter from '@assets/icons/icon_followus_twitter.svg'
+import IconLinkedin from '@assets/icons/icon_followus_linkedin.svg'
+import IconYoutube from '@assets/icons/icon_followus_youtube.svg'
+import IconPinterest from '@assets/icons/icon_followus_pinterest.svg'
+import IconBehance from '@assets/icons/icon_followus_behance.svg'
 
 const socialLinks = [
     { icon: <IconFacebook />, href: 'https://www.facebook.com/' },
